@@ -23,7 +23,7 @@
 		<property name="url" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe" />-->
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
 		<property name="jdbcUrl" value="jdbc:log4jdbc:oracle:thin:@localhost:1521:xe" /> 
-		<property name="username" value="ora_user" />
+		<property name="username" value="docmall" />
 		<property name="password" value="1234" />
 	</bean>	
 	
@@ -53,13 +53,27 @@
 	<context:annotation-config></context:annotation-config>
 	<context:component-scan base-package="com.doccomsa.aop" />
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-	
-	<mybatis-spring:scan base-package="com.doccomsa.mapper"/>
-	<context:component-scan base-package="com.doccomsa.service" />
-	 -->
+	-->
+	<mybatis-spring:scan base-package="com.docmall.mapper"/>
+	<context:component-scan base-package="com.docmall.service" />
+	 
 	<!-- 스케줄링 작업을 위한 설정 -->
 	<!-- 
 	<task:annotation-driven/>
 	<context:component-scan base-package="com.doccomsa.task" />		
 	 -->
+	 
+	<!-- 올릴때는 value="" 이부분 지우고 올릴것 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host"  value="smtp.gmail.com" />
+		<property name="port" value="587"></property>
+		<property name="username" value="kyung2643@gmail.com"></property>
+		<property name="password" value="dnjstnddl1!"></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>		 
+	</bean>
 </beans>

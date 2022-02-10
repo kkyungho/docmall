@@ -17,15 +17,15 @@
 	
 	<!-- 추가설정 -->
 	<!-- 
-	<resources mapping="/board/**" location="/resources/" />
+	<resources mapping="/member/**" location="/resources/" />
 	 -->
 	
-	<!-- 
+	
 	<resources mapping="/bower_components/**" location="/resources/bower_components/" />
 	<resources mapping="/dist/**" location="/resources/dist/" />
 	
 	<resources mapping="/upload/**" location="/resources/upload/" />
- 	-->
+ 	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />

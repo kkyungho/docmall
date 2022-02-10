@@ -10,7 +10,7 @@
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.9.0</org.aspectj-version><!-- AOP는 라이브러리가 보조적인 지원을 함. 1.9.0변경 -->
+		<org.aspectj-version>1.9.0</org.aspectj-version><!-- AOP는  라이브러리가 보조적인 지원을 함.1.9.0변경 -->
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	<repositories>
@@ -97,7 +97,7 @@
 					<artifactId>jmxri</artifactId>
 				</exclusion>
 			</exclusions>
-			<!-- <scope>runtime</scope> lombok 충돌 -->
+			<!-- <scope>runtime</scope> lombok 충돌-->
 		</dependency>
 
 		<!-- @Inject -->
@@ -125,7 +125,7 @@
 		    <version>3.1.0</version>
 		    <scope>provided</scope>
 		</dependency>
-		 
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
@@ -146,10 +146,10 @@
 			<!-- <scope>test</scope> -->
 		</dependency> 
 		
-		<!-- 추가 라이브러리 -->   
+		<!-- 추가 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-		<!-- 버전이 낮아서 현재 스프링프로젝트 환경과 문제가 발생되면, 버전을 높인다. -->
-		<!-- @ResponseBody : 객체를 JSON표기형식의 데이터로 브라우저로 보낼때 사용 -->
+		<!--  버전이 낮아서 현재 스프링프로젝트 환경과 문제가 발생되면, 버전을 높인다. -->
+		<!-- @ResponseBody : 객체를 JSON표기형식의 데이타로 브라우저로 보낼때 사용 -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
@@ -158,9 +158,9 @@
 		
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
 		<dependency>
-		    <groupId>com.fasterxml.jackson.dataformat</groupId>
-		    <artifactId>jackson-dataformat-xml</artifactId>
-		    <version>2.13.1</version>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.13.1</version>
 		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
@@ -170,23 +170,27 @@
 		    <version>2.8.2</version>
 		</dependency>
 		
-						
+		
+		  
 		<!-- 오라클 JDBC 드라이버 -->
 		<dependency>
 		    <groupId>com.oracle</groupId>
 		    <artifactId>ojdbc6</artifactId>
 		    <version>12.1.0.2</version>
-		</dependency>				
+		</dependency>
+		
 		
 		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+		<!-- Connection Pool기능지원 -->
 		<dependency>
 		    <groupId>com.zaxxer</groupId>
 		    <artifactId>HikariCP</artifactId>
 		    <version>2.7.4</version>
-		</dependency>				
+		</dependency>
 		
-		<!-- mybatis 사용하기위한 아래 5가지 라이브러리(With spring-test.) -->
-		<!-- 1)mybatis 2)mybatis-spring 3)spring-jdbc 4)spring-tx -->
+		
+		<!-- mybatis 사용하기위한 아래 5가지 라이브러리(With spring-test). -->
+		<!-- 1)mybatis 2)mybatis-spring 3)spring-jdbc 4)spring-tx 5)spring-test-->
 		<!-- 1)https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
@@ -206,22 +210,23 @@
 		    <version>${org.springframework-version}</version>
 		</dependency>
 		<!-- 4)https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+		<!-- 트랜잭션 라이브러리 -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-tx</artifactId>
 		    <version>${org.springframework-version}</version>
 		</dependency>
-		<!-- 5)JUnit과 함께 테스트를 위한 관련 라이브러리 -->
+		<!-- 5)JUnit와 함께 테스트를 위한 관련 라이브러리 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
-		</dependency>		
+		</dependency>
 		
 		<!-- mybatis 사용에 따른 로그 라이브러리 : sql구문 상세내용을 로그로 출력(개발용) -->
-		<!-- 서버로 배포시 아래 로그라이브러리를 이용한 root-context.xml파일의 설정은 기본으로 돌려놔야 한다. -->
+		<!--  서버로 배포시 아래 로그라이브러리를 이용한 root-context.xml파일의 설정은 기본으로 돌려놔야 한다. -->
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
-		<!-- 1)log4jdbc.log4j2.properties 2)logback.xml 2개파일 준비해서 src/main/resource 폴더에 복사해야함 -->
+		<!-- 1)log4jdbc.log4j2.properties 2)logback.xml 2개파일 준비해서   src/main/resource 폴더에 복사해야 함 -->
 		<!-- log4j.xml : 로그 level제어 -->
 		<dependency>
 		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
@@ -238,7 +243,7 @@
 		</dependency>
 		
 		<!-- servlet 3.0미만 환경에서 사용하는 파일업로드 라이브러리. -->
-		<!-- 현재 프로젝트 환경은 servlet 3.0 API를 이용하여 작업 -->
+		<!--  현재 프로젝트 환경은  servlet 3.0 API를 이용하여 작업-->
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
@@ -261,7 +266,6 @@
 		    <artifactId>quartz</artifactId>
 		    <version>2.3.2</version>
 		</dependency>
-		
 		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz-jobs -->
 		<dependency>
 		    <groupId>org.quartz-scheduler</groupId>
@@ -269,7 +273,45 @@
 		    <version>2.3.2</version>
 		</dependency>
 		
-											 		    
+		<!-- 스프링시큐리티 라이브러리 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<!-- SMTP메일서버이용, 메일기능(발송) 지원라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		
+		<!-- javax.mail.internet.MimeMessage 를 사용하기위하여 필요함. 메일내용을 담당-->
+		<!-- https://mvnrepository.com/artifact/com.sun.mail/javax.mail -->
+		<dependency>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
+		    <version>1.5.6</version>
+		</dependency>
+		
+		
 	</dependencies>
     <build>
         <plugins>
